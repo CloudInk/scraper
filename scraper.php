@@ -61,6 +61,22 @@ class scraper
         return $this;
     }
 
+    function scrapeTarget($target = 'index')
+    {
+        switch($target) {
+            case 'index':
+                $this->scrapeIndex();
+                break;
+            case 'articles':
+                $this->scrapeIndexArticles();
+                break;
+            default:
+                $this->scrapeIndex();
+                break;
+        }
+        return $this;
+    }
+
     function scrapeIndex()
     {
         $this->doc->loadHTMLFile($this->url);
@@ -106,4 +122,5 @@ class scraper
         unset($this);
     }
 }
+
 ?>
