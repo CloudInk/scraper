@@ -31,7 +31,7 @@ $s->scrapeIndex()->scrapeIndexArticles();
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - MSNBC Version <br>
+            <li class='title'>Scraper v1 - Headlines - MSNBC Version <br>
                 <small><a href="scraper-view.php?json=1">View JSON Output</a></small>
             </li>
 
@@ -44,7 +44,42 @@ $s->scrapeIndex()->scrapeIndexArticles();
 
             echo "
 
-                             <div class='small-12 columns' style=''>
+                             <div class='small-4 columns' style=''>
+                                <ul class='pricing-table' style='height: 521px;'>
+                                    <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
+                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
+                                    <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
+                                    <li class='cta-button'><a class='button' href='{$article['article-link']}'>Read Article</a></li>
+                                </ul>
+                            </div>
+
+                            ";
+            $x++;
+        }
+    }
+
+    ?>
+
+</div>
+<hr>
+<hr>
+<div class="row">
+    <div class='small-12 columns' style=''>
+        <ul class='pricing-table'>
+            <li class='title'>Scraper v1 - Articles - MSNBC Version <br>
+                <small><a href="scraper-view.php?json=2">View JSON Output</a></small>
+            </li>
+
+        </ul>
+    </div>
+    <?php
+    if (is_array($s->articles)) {
+        $x = 0;
+        foreach ($s->articles as $article) {
+
+            echo "
+
+                             <div class='small-14 columns' style=''>
                                 <ul class='pricing-table' style='height: auto;'>
                                     <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
@@ -77,7 +112,6 @@ $s->scrapeIndex()->scrapeIndexArticles();
         </ul>
     </div>
 </div>
-
 <script src="http://foundation.zurb.com/assets/js/jquery.js"></script>
 <script src="http://foundation.zurb.com/assets/js/templates4/foundation4.js"></script>
 <script>
