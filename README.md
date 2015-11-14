@@ -51,7 +51,7 @@ $s->scrapeTarget('index')->scrapeTarget('articles');
 $s->articles;
 
 //To expose the array you can simply
-$s->print_rr($s->scrapeTarget('index')->scrapeTarget('index')->articles);
+$s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles);
 
 /*
 Array
