@@ -7,10 +7,10 @@ include('scraper.php');
 
 $s = new scraper();
 
-//You always have to call scrapeIndex() first -- it loads the array with the article URLs.
+//You always have to call scrapeTarget('index') first -- it loads the array with the article URLs.
 
 //Scrape Index and Articles, then output as JSON
-$s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes();
+$s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 
 /*
 {  
@@ -26,7 +26,7 @@ $s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes();
 */
 
 //Scrape only Index, then output as JSON
-$s->scrapeIndex()->printJSONScrapes();
+$s->scrapeTarget('index')->printJSONScrapes();
 
 /*
 {  
@@ -42,16 +42,16 @@ $s->scrapeIndex()->printJSONScrapes();
 */
 
 //Scrape only Index, and don't output
-$s->scrapeIndex();
+$s->scrapeTarget('index');
 
 //Scrape Index and Articles, and don't output
-$s->scrapeIndex()->scrapeIndexArticles();
+$s->scrapeTarget('index')->scrapeTarget('articles');
 
-//Full article array is stored in after scrapeIndex() has been called.
+//Full article array stored in `articles` after scrapeTarget('index') has been called.
 $s->articles;
 
 //To expose the array you can simply
-$s->print_rr($s->scrapeIndex()->ScrapeIndexArticles()->articles);
+$s->print_rr($s->sscrapeTarget('index')->scrapeTarget('index')->articles);
 
 Array
 (
