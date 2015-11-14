@@ -53,6 +53,7 @@ $s->articles;
 //To expose the array you can simply
 $s->print_rr($s->scrapeTarget('index')->scrapeTarget('index')->articles);
 
+/*
 Array
 (
     [8a5508194288b21aa25ad2d5028bb0c493ebde9b] => Array
@@ -70,7 +71,7 @@ Array
 
         )
 )
-
+*/
 ```
 Easy as pie, use the ```scraper-view.php``` file for an example.
 See it live at: http://tdw.io/scraper-view.php
