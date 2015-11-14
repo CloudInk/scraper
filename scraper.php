@@ -70,7 +70,6 @@ class scraper
         $this->xpath = new DOMXPath($this->doc);
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
-        
         $xs = 0;
         $xv = 1;
         while ($xs < 200) {
@@ -116,12 +115,6 @@ class scraper
 
     function scrapeIndexArticles()
     {
-
-        /*if($image_src_node->length == 0 || $image_alt_node->length == 0) {
-            $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/img/@src");
-            $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/img/@alt");
-        }*/
-
         foreach($this->articles as $article) {
             $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
             $this->xpath = new DOMXPath($this->doc);
