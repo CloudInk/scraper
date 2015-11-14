@@ -2,12 +2,17 @@
 include('scraper.php');
 $s = new scraper();
 
-if (isset($_GET['json'])) {
+if (isset($_GET['json']) && $_GET['json'] == 1) {
+    header("Content-Type: application/json;");
+    exit($s->scrapeIndex()->printJSONScrapes());
+} elseif(isset($_GET['json']) && $_GET['json'] == 2) {
     header("Content-Type: application/json;");
     exit($s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes());
+} else {
+    $s->scrapeIndex()->scrapeIndexArticles();
 }
 
-$s->scrapeIndex()->scrapeIndexArticles();
+
 
 
 ?>
@@ -32,7 +37,7 @@ $s->scrapeIndex()->scrapeIndexArticles();
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
             <li class='title'>Scraper v1 - Headlines - MSNBC Version <br>
-                <small><a href="scraper-view.php?json=1">View JSON Output</a></small>
+                <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
 
         </ul>
