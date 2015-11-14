@@ -7,6 +7,8 @@ include('scraper.php');
 
 $s = new scraper();
 
+//You always have to call scrapeIndex() first -- it loads the array with the article URLs.
+
 //Scrape Index and Articles, then output as JSON
 $s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes();
 
