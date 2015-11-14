@@ -1,11 +1,11 @@
 <?php
 include('scraper.php');
-$s = new scraper();
+$s = new \TDW\IO\SCRAPER\scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
     header("Content-Type: application/json;");
     //exit($s->scrapeIndex()->printJSONScrapes());
-    exit($s->print_rr($s->scrapeTarget('index')->articles));
+    exit($s->scrapeTarget('index')->printJSONScrapes());
 } elseif(isset($_GET['json']) && $_GET['json'] == 2) {
     header("Content-Type: application/json;");
     //exit($s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles));
