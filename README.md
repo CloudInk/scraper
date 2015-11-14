@@ -47,6 +47,10 @@ $s->scrapeTarget('index');
 //Scrape Index and Articles, and don't output
 $s->scrapeTarget('index')->scrapeTarget('articles');
 
+//Scrape a single article body
+//See the file scraper-article-view.php for an example
+$s->scrapeTarget('index')->scrapeSingleArticleBody('msnbc.com article url goes here');
+
 //Full scrape array stored in `articles` after scrapeTarget('index') has been called.
 $s->articles;
 
