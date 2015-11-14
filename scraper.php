@@ -69,9 +69,11 @@ class scraper implements scraperService
 
         /* There are about 100 or so total span tags to sift through */
         while ($xs < 200) {
+            
+             /* Normally, this is where the image title and src are at */
             $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/span/span[5]/@data-src");
             $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/span/@data-title");
-
+            
             /* Sometimes MSNBC changes the structure of the page, when that happens
                most of the span tags disappear, and we can then reach the unreachable img tag. */
             if($image_alt_node->length > 0) {
