@@ -1,5 +1,6 @@
 <?php
 namespace TDW\IO\SCRAPER;
+
 /* Scraper V1 */
 /* Class assumes you've installed the proper libs for DOM */
 /* timdwalton@gmail.com */
@@ -115,7 +116,6 @@ class scraper implements scraperService
         return $this;
     }
 
-
     function scrapeIndexArticles()
     {
         foreach($this->articles as $article) {
@@ -164,12 +164,10 @@ class scraper implements scraperService
         return $this;
     }
 
-
     function __destruct()
     {
         /* so I can sleep at night.. */
         unset($this);
     }
 }
-
 ?>
