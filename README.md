@@ -2,7 +2,7 @@
 MSNBC Headline Scraper
 
 Usage:
-
+[code='php']
 include('scraper.php');
 
 $s = new scraper();
@@ -24,5 +24,5 @@ $s->articles;
 
 //To expose the array you can simply
 $s->print_rr($s->articles);
-
+[/code]
 Easy as pie
