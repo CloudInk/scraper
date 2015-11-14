@@ -7,9 +7,9 @@
 class scraper
 {
 
-    function __construct($url = 'http://msnbc.com')
+    function __construct()
     {
-        $this->url = $url;
+        $this->url = 'http://msnbc.com';
         $this->rcount = 10;
         $this->response = '';
         $this->articles = [];
@@ -106,5 +106,4 @@ class scraper
         unset($this);
     }
 }
-
 ?>
