@@ -18,9 +18,9 @@ if (is_array($s->articles)) {
                              <div class='small-12 columns' style=''>
                                 <ul class='pricing-table' style='height: 521px;'>
                                     <li class='title'>{$article['article-title']}<br><small><a href='{$article['article-link']}'>{$article['article-link']}</a> </small></li>
-                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 400px; width:  800px;'></small></li>
-                                    <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
-                                    <li class='cta-button'>{$s->article}</li>
+                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 400px; width:  800px;'></small><br><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
+                                    <li class='description' style='height: auto; overflow: auto;'>{$s->article}</li>
+                                    <li class='cta-button'><a class='button' href='{$article['article-link']}'>View on MSNBC.com</a></li>
                                 </ul>
                             </div>
 
@@ -60,7 +60,7 @@ if (is_array($s->articles)) {
     </div>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='bullet-item'><strong>Trending:</strong> <?=$article_links;?></li>
+            <li class='bullet-item'><a href="scraper-view.php"><strong>Trending:</strong></a> <?=$article_links;?></li>
 
         </ul>
     </div>
