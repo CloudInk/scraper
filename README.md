@@ -64,7 +64,7 @@ Array
             [article-uid] => 8a5508194288b21aa25ad2d5028bb0c493ebde9b
             [article-body] => Array
                 (
-                    [0] => PARIS - French President Francois Hollande vowed a 'merciless' response to the deadliest attacks on the country's soil since World War II. ISIS‚ claimed responsibility Saturday for a coordinated assault on Paris.
+                    [0] => PARIS - French President Francois Hollande vowed a merciless response to the deadliest attacks on the countrys soil since World War II. ISIS‚ claimed responsibility Saturday for a coordinated assault on Paris.
                     [1] => A state of emergency was declared and France deployed 1,500 troops after a near-simultaneous series of explosions and shootings brought the city to a horrified standstill overnight. The death toll rose to 127 and 200 other people were wounded, officials said.
                 )
 
