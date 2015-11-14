@@ -71,7 +71,7 @@ $s->scrapeIndex()->scrapeIndexArticles();
     ?>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>timdwalton@gmail.com | 316.993.3274</li>
+            <li class='title'></li>
 
         </ul>
     </div>
