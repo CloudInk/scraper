@@ -1,11 +1,15 @@
 <?php
-
+namespace TDW\IO\SCRAPER;
 /* Scraper V1 */
 /* Class assumes you've installed the proper libs for DOM */
 /* timdwalton@gmail.com */
 /* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
 
-class scraper
+interface scraperService {
+    public function scrapeTarget();
+}
+
+class scraper implements scraperService
 {
 
     function __construct()
