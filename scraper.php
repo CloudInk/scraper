@@ -14,10 +14,12 @@ class scraper
         $this->rcount = 10;
         $this->response = '';
         $this->articles = [];
-        $this->articleURL = '';
+        $this->article = [];
         $this->doc = new DOMDocument();
-        $this->doc->preserveWhiteSpace = false;
         libxml_use_internal_errors(true);
+        $this->doc->preserveWhiteSpace = false;
+        $this->xpath = '';
+
     }
 
     function flatten(array $array)
@@ -51,6 +53,9 @@ class scraper
                 break;
             case 'articles':
                 $this->scrapeIndexArticles();
+                break;
+            case 'single':
+                $this->scrapeSingleArticle();
                 break;
             default:
                 $this->scrapeIndex();
@@ -98,7 +103,6 @@ class scraper
         return $this;
     }
 
-
     function scrapeIndexArticles()
     {
         foreach($this->articles as $article) {
@@ -114,6 +118,31 @@ class scraper
                 $i++;
             }
         }
+        return $this;
+    }
+
+    function scrapeSingleArticleBody($article_url)
+    {
+        $this->doc->loadHTMLFile($article_url);
+        $this->xpath = new DOMXPath($this->doc);
+        $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
+        $x = 0;
+        $i = 1;
+        while($x < $article_body->length) {
+            $article_body_content = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p[{$i}]");
+            $out['article-body'][] = trim(preg_replace('/\s\s+/', ' ', $article_body_content->item(0)->nodeValue));
+            $x++;
+            $i++;
+        }
+        $body = '';
+        if(!isset($out)) {
+            $this->article = "<a class='button' href='{$article_url}'>Watch Video</a>";
+            return $this;
+        }
+        foreach($out['article-body'] as $line) {
+            $body .= $line;
+        }
+        $this->article = $body;
         return $this;
     }
 
