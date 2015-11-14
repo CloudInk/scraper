@@ -17,8 +17,7 @@ class scraper
         $this->doc = new DOMDocument();
         libxml_use_internal_errors(true);
         $this->doc->preserveWhiteSpace = false;
-        $this->doc->loadHTMLFile($this->url);
-        $this->xpath = new DOMXPath($this->doc);
+
     }
 
     function flatten(array $array)
@@ -41,6 +40,7 @@ class scraper
         echo "<pre>";
         print_r($what);
         echo "</pre>";
+        return $this;
     }
 
     function scrapeIndexArticles()
@@ -53,7 +53,7 @@ class scraper
                 $i = 1;
                 while($x < $article_body->length) {
                     $article_body_content = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p[{$i}]");
-                    $this->articles[$article['article-uid']]['article-body'][] = ($article_body_content->item(0)->nodeValue);
+                    $this->articles[$article['article-uid']]['article-body'][] = trim(preg_replace('/\s\s+/', ' ', $article_body_content->item(0)->nodeValue));
                     $x++;
                     $i++;
                 }
@@ -63,6 +63,8 @@ class scraper
 
     function scrapeIndex()
     {
+        $this->doc->loadHTMLFile($this->url);
+        $this->xpath = new DOMXPath($this->doc);
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
         $image_text_node = $this->xpath->query("//div[@class='featured-slider__figure']/a/span");
