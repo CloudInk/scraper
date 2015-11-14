@@ -16,9 +16,8 @@ class scraper
         $this->articles = [];
         $this->articleURL = '';
         $this->doc = new DOMDocument();
-        libxml_use_internal_errors(true);
         $this->doc->preserveWhiteSpace = false;
-
+        libxml_use_internal_errors(true);
     }
 
     function flatten(array $array)
