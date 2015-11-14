@@ -20,7 +20,7 @@ class scraper implements scraperService
         $this->response = '';
         $this->articles = [];
         $this->article = [];
-        $this->doc = new DOMDocument();
+        $this->doc = new \DOMDocument();
         libxml_use_internal_errors(true);
         $this->doc->preserveWhiteSpace = false;
         $this->xpath = '';
@@ -60,7 +60,7 @@ class scraper implements scraperService
     function scrapeIndex()
     {
         $this->doc->loadHTMLFile($this->url);
-        $this->xpath = new DOMXPath($this->doc);
+        $this->xpath = new \DOMXPath($this->doc);
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
 
@@ -69,11 +69,9 @@ class scraper implements scraperService
 
         /* There are about 100 or so total span tags to sift through */
         while ($xs < 200) {
-            
-             /* Normally, this is where the image title and src are at */
             $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/span/span[5]/@data-src");
             $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/span/@data-title");
-            
+
             /* Sometimes MSNBC changes the structure of the page, when that happens
                most of the span tags disappear, and we can then reach the unreachable img tag. */
             if($image_alt_node->length > 0) {
@@ -118,11 +116,12 @@ class scraper implements scraperService
         return $this;
     }
 
+
     function scrapeIndexArticles()
     {
         foreach($this->articles as $article) {
             $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
-            $this->xpath = new DOMXPath($this->doc);
+            $this->xpath = new \DOMXPath($this->doc);
             $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
             $x = 0;
             $i = 1;
@@ -139,7 +138,7 @@ class scraper implements scraperService
     function scrapeSingleArticleBody($article_url)
     {
         $this->doc->loadHTMLFile($article_url);
-        $this->xpath = new DOMXPath($this->doc);
+        $this->xpath = new \DOMXPath($this->doc);
         $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
         $x = 0;
         $i = 1;
@@ -166,10 +165,12 @@ class scraper implements scraperService
         return $this;
     }
 
+
     function __destruct()
     {
         /* so I can sleep at night.. */
         unset($this);
     }
 }
+
 ?>
