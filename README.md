@@ -47,7 +47,7 @@ $s->scrapeTarget('index');
 //Scrape Index and Articles, and don't output
 $s->scrapeTarget('index')->scrapeTarget('articles');
 
-//Full article array stored in `articles` after scrapeTarget('index') has been called.
+//Full scrape array stored in `articles` after scrapeTarget('index') has been called.
 $s->articles;
 
 //To expose the array you can simply
