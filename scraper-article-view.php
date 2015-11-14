@@ -26,7 +26,7 @@ if (is_array($s->articles)) {
 
                             ";
         } else {
-            $article_links .= " - <a href='scraper-article-view.php?uid={$article['article-link']}'>{$article['article-title']}</a> - ";
+            $article_links .= " <a href='scraper-article-view.php?uid={$article['article-link']}'>{$article['article-title']}</a> &middot;";
         }
         $x++;
     }
@@ -60,7 +60,7 @@ if (is_array($s->articles)) {
     </div>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='bullet-item'><a href="scraper-view.php"><strong>Trending:</strong></a> <?=$article_links;?></li>
+            <li class='bullet-item'><a href="scraper-view.php"><strong>Back to Headlines</strong></a><hr> <?=$article_links;?></li>
 
         </ul>
     </div>
