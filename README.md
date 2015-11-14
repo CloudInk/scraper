@@ -69,7 +69,7 @@ Array
                 )
 
         )
-
+)
 
 ```
 Easy as pie, use the ```scraper-view.php``` file for an example.
