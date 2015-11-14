@@ -71,20 +71,30 @@ class scraper
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
         $image_text_node = $this->xpath->query("//div[@class='featured-slider__figure']/a/span");
-
         $xs = 0;
         $xv = 1;
-        while ($xs < 300) {
+        while ($xs < 200) {
             $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/span/span[5]/@data-src");
-            @$article_images[] = ($image_src_node->item(0)->nodeValue);
+            $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/span/@data-title");
+            if($image_alt_node->length > 0) {
+                @$article_alts[] = ($image_alt_node->item(0)->nodeValue);
+            } else {
+                $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/img/@alt");
+                @$article_alts[] = ($image_alt_node->item(0)->nodeValue);
+            }
+            if($image_src_node->length > 0) {
+                @$article_images[] = ($image_src_node->item(0)->nodeValue);
+            } else {
+                $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/img/@src");
+                @$article_images[] = ($image_src_node->item(0)->nodeValue);
+            }
             if ($xv != 10) {
                 $xv++;
             }
             $xs++;
         }
-
         $article_images_arr = (array_slice($article_images, 0, $this->rcount));
-
+        $article_alts_arr = (array_slice($article_alts, 0, $this->rcount));
         if ($results->length > 0) {
             $x = 0;
             $i = 1;
@@ -93,7 +103,7 @@ class scraper
                 $this->articles[$uid]['article-title'] = $results->item($x)->nodeValue;
                 $this->articles[$uid]['article-link'] = "{$this->url}{$links->item($x)->attributes->getNamedItem('href')->nodeValue}";
                 $this->articles[$uid]['article-image-src'] = $article_images_arr[$x];
-                $this->articles[$uid]['article-image-text'] = $image_text_node->item($x)->attributes->getNamedItem('data-alt')->nodeValue;
+                $this->articles[$uid]['article-image-text'] = $article_alts_arr[$x];//$image_text_node->item($x)->attributes->getNamedItem('data-alt')->nodeValue;
                 $this->articles[$uid]['article-uid'] = $uid;
                 $this->articles[$uid]['article-body'] = '';
                 $x++;
@@ -103,8 +113,15 @@ class scraper
         return $this;
     }
 
+
     function scrapeIndexArticles()
     {
+
+        /*if($image_src_node->length == 0 || $image_alt_node->length == 0) {
+            $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/img/@src");
+            $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/img/@alt");
+        }*/
+
         foreach($this->articles as $article) {
             $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
             $this->xpath = new DOMXPath($this->doc);
