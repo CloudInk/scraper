@@ -3,6 +3,7 @@
 /* Scraper V1 */
 /* Class assumes you've installed the proper libs for DOM */
 /* timdwalton@gmail.com */
+/* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
 
 class scraper
 {
