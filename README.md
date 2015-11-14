@@ -26,3 +26,4 @@ $s->articles;
 $s->print_rr($s->articles);
 ```
 Easy as pie, use the ```scraper-view.php``` file for an example.
+See it live at: http://tdw.io/scraper-view.php
