@@ -25,4 +25,4 @@ $s->articles;
 //To expose the array you can simply
 $s->print_rr($s->articles);
 ```
-Easy as pie, use the ```scaper-view.php``` file for an example.
+Easy as pie, use the ```scraper-view.php``` file for an example.
