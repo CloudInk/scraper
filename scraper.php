@@ -140,7 +140,7 @@ class scraper
             return $this;
         }
         foreach($out['article-body'] as $line) {
-            $body .= $line;
+            $body .= "<p style='font-size: 1.6em; color: #666; text-align: left; float: left; margin: 2px; padding: 4px;'>{$line}</p>";
         }
         $this->article = $body;
         return $this;
