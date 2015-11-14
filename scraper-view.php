@@ -3,6 +3,7 @@ include('scraper.php');
 $s = new scraper();
 
 if (isset($_GET['json'])) {
+    header("Content-Type: application/json;");
     exit($s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes());
 }
 
@@ -71,7 +72,7 @@ $s->scrapeIndex()->scrapeIndexArticles();
     ?>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'></li>
+            <li class='title'>timdwalton@gmail.com</li>
 
         </ul>
     </div>
