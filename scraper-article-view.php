@@ -60,7 +60,7 @@ if (is_array($s->articles)) {
     </div>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='bullet-item'><a href="scraper-view.php"><strong>Back to Headlines</strong></a><hr> <small>Trending</small> <?=$article_links;?></li>
+            <li class='bullet-item'><a href="scraper-view.php"><strong>Back to Headlines</strong></a><hr> Trending<br> <?=$article_links;?></li>
 
         </ul>
     </div>
