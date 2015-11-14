@@ -70,7 +70,7 @@ class scraper
         $this->xpath = new DOMXPath($this->doc);
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
-        $image_text_node = $this->xpath->query("//div[@class='featured-slider__figure']/a/span");
+        
         $xs = 0;
         $xv = 1;
         while ($xs < 200) {
