@@ -10,8 +10,6 @@ if(isset($_GET['json'])) {
 }
 
 ?>
-<!--
-
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <!--[if IE 10]><html class="ie10" lang="en" > <![endif]-->
@@ -74,4 +72,4 @@ if(isset($_GET['json'])) {
 </script>
 </body>
 </html>
--->
+
