@@ -4,24 +4,6 @@
 /* Class assumes you've installed the proper libs for DOM */
 /* timdwalton@gmail.com */
 
-/* Set content type since we are spitting out JSON */
-//header("Content-Type: application/json;");
-
-/* Instantiate the scraper */
-$s = new scraper('http://msnbc.com');
-
-/* We print after scrape below but you could also..
-
-$s->scrape();
-print_r($s->articles);
-
-without calling printScrapes() to print the array, or massage it before outputting
-as json.
-
-*/
-$s->scrape();
-//print_r($s->articles);
-
 class scraper
 {
 
