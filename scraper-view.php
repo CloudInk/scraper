@@ -52,7 +52,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
                                     <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
-                                    <li class='cta-button'><a class='button' href='{$article['article-link']}'>Read Article</a></li>
+                                    <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Article</a></li>
                                 </ul>
                             </div>
 
@@ -76,11 +76,12 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
         </ul>
     </div>
     <?php
+    $arr = '';
     if (is_array($s->articles)) {
         $x = 0;
         foreach ($s->articles as $article) {
 
-            echo "
+            $arr .= "
 
                              <div class='small-14 columns' style=''>
                                 <ul class='pricing-table' style='height: auto;'>
@@ -91,14 +92,14 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
             if (is_array($article['article-body'])) {
                 foreach ($article['article-body'] as $line) {
-                    echo "<p style='text-align: left;'>{$line}</p>";
+                    $arr .= "<p style='text-align: left;'>{$line}</p>";
                 }
             } else {
-                echo "<a class='button' href='{$article['article-link']}'>Watch Video</a>";
+                $arr .= "<a class='button' href='{$article['article-link']}'>Watch Video</a>";
             }
 
 
-            echo "</li>
+            $arr .= "</li>
                                 </ul>
                             </div>
 
