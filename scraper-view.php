@@ -4,17 +4,15 @@ $s = new scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
     header("Content-Type: application/json;");
-    exit($s->scrapeIndex()->printJSONScrapes());
+    //exit($s->scrapeIndex()->printJSONScrapes());
+    exit($s->print_rr($s->scrapeTarget('index')->articles));
 } elseif(isset($_GET['json']) && $_GET['json'] == 2) {
     header("Content-Type: application/json;");
-    exit($s->scrapeIndex()->scrapeIndexArticles()->printJSONScrapes());
+    //exit($s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles));
+    exit($s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes());
 } else {
-    $s->scrapeIndex()->scrapeIndexArticles();
+    $s->scrapeTarget('index')->scrapeTarget('articles');
 }
-
-
-
-
 ?>
 
 
@@ -87,7 +85,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
                              <div class='small-14 columns' style=''>
                                 <ul class='pricing-table' style='height: auto;'>
                                     <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
-                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
+                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 300px; width:  700px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
                                     <li class='cta-button'>";
 
