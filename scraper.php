@@ -13,6 +13,7 @@ class scraper
         $this->rcount = 10;
         $this->response = '';
         $this->articles = [];
+        $this->articleURL = '';
         $this->doc = new DOMDocument();
         libxml_use_internal_errors(true);
         $this->doc->preserveWhiteSpace = false;
@@ -20,29 +21,57 @@ class scraper
         $this->xpath = new DOMXPath($this->doc);
     }
 
-    function printScrapes()
+    function flatten(array $array)
+    {
+        $return = array();
+        array_walk_recursive($array, function ($a) use (&$return) {
+            $return[] = $a;
+        });
+        return $return;
+    }
+
+    function printJSONScrapes()
     {
         $scrapes = json_encode($this->articles);
         return print($scrapes);
     }
 
-    function scrape()
+    function print_rr($what)
     {
+        echo "<pre>";
+        print_r($what);
+        echo "</pre>";
+    }
 
-        $article_class_node = 'featured-slider-menu__item__link__title';
-        $article_link_ref_node = 'featured-slider-menu__item__link';
-        $image_text_path = "//div[@class='featured-slider__figure']/a/span";
-        $results = $this->xpath->query("//*[@class='{$article_class_node}']");
-        $links = $this->xpath->query("//*[@class='{$article_link_ref_node}']");
-        $image_text_node = $this->xpath->query($image_text_path);
+    function scrapeIndexArticles()
+    {
+            foreach($this->articles as $article) {
+                $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
+                $this->xpath = new DOMXPath($this->doc);
+                $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
+                $x = 0;
+                $i = 1;
+                while($x < $article_body->length) {
+                    $article_body_content = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p[{$i}]");
+                    $this->articles[$article['article-uid']]['article-body'][] = ($article_body_content->item(0)->nodeValue);
+                    $x++;
+                    $i++;
+                }
+            }
+        return $this;
+    }
+
+    function scrapeIndex()
+    {
+        $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
+        $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
+        $image_text_node = $this->xpath->query("//div[@class='featured-slider__figure']/a/span");
 
         $xs = 0;
         $xv = 1;
         while ($xs < 300) {
-            $image_src_path = "//article[{$xv}]/div/a/span/span[5]/@data-src";
-            $image_src_node = $this->xpath->query($image_src_path);
+            $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/span/span[5]/@data-src");
             @$article_images[] = ($image_src_node->item(0)->nodeValue);
-
             if ($xv != 10) {
                 $xv++;
             }
@@ -55,10 +84,13 @@ class scraper
             $x = 0;
             $i = 1;
             while ($x < $this->rcount) {
-                $this->articles[$x]['article-title'] = $results->item($x)->nodeValue;
-                $this->articles[$x]['article-link'] = "{$this->url}{$links->item($x)->attributes->getNamedItem('href')->nodeValue}";
-                $this->articles[$x]['article-image-src'] = $article_images_arr[$x];
-                $this->articles[$x]['article-image-text'] = $image_text_node->item($x)->attributes->getNamedItem('data-alt')->nodeValue;
+                $uid = sha1(md5(rand(111111,999999)));
+                $this->articles[$uid]['article-title'] = $results->item($x)->nodeValue;
+                $this->articles[$uid]['article-link'] = "{$this->url}{$links->item($x)->attributes->getNamedItem('href')->nodeValue}";
+                $this->articles[$uid]['article-image-src'] = $article_images_arr[$x];
+                $this->articles[$uid]['article-image-text'] = $image_text_node->item($x)->attributes->getNamedItem('data-alt')->nodeValue;
+                $this->articles[$uid]['article-uid'] = $uid;
+                $this->articles[$uid]['article-body'] = '';
                 $x++;
                 $i++;
             }
