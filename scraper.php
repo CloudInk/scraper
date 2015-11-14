@@ -22,15 +22,6 @@ class scraper
 
     }
 
-    function flatten(array $array)
-    {
-        $return = array();
-        array_walk_recursive($array, function ($a) use (&$return) {
-            $return[] = $a;
-        });
-        return $return;
-    }
-
     function printJSONScrapes()
     {
         $scrapes = json_encode($this->articles);
@@ -54,9 +45,6 @@ class scraper
             case 'articles':
                 $this->scrapeIndexArticles();
                 break;
-            case 'single':
-                $this->scrapeSingleArticle();
-                break;
             default:
                 $this->scrapeIndex();
                 break;
@@ -70,11 +58,17 @@ class scraper
         $this->xpath = new DOMXPath($this->doc);
         $results = $this->xpath->query("//*[@class='featured-slider-menu__item__link__title']");
         $links = $this->xpath->query("//*[@class='featured-slider-menu__item__link']");
+
         $xs = 0;
         $xv = 1;
+
+        /* There are about 100 or so total span tags to sift through */
         while ($xs < 200) {
             $image_src_node = $this->xpath->query("//article[{$xv}]/div/a/span/span[5]/@data-src");
             $image_alt_node = $this->xpath->query("//article[{$xv}]/div/a/span/@data-title");
+
+            /* Sometimes MSNBC changes the structure of the page, when that happens
+               most of the span tags disappear, and we can then reach the unreachable img tag. */
             if($image_alt_node->length > 0) {
                 @$article_alts[] = ($image_alt_node->item(0)->nodeValue);
             } else {
@@ -92,8 +86,13 @@ class scraper
             }
             $xs++;
         }
+
+        /*  Chop the array down to size because we packed it full of crap when trying
+         *  to loop through the span tags.
+         */
         $article_images_arr = (array_slice($article_images, 0, $this->rcount));
         $article_alts_arr = (array_slice($article_alts, 0, $this->rcount));
+
         if ($results->length > 0) {
             $x = 0;
             $i = 1;
@@ -144,14 +143,19 @@ class scraper
             $x++;
             $i++;
         }
+
         $body = '';
+
+        /* Sometimes, the page doesn't have an image, it has a video. as such, we do this: */
         if(!isset($out)) {
             $this->article = "<a class='button' href='{$article_url}'>Watch Video</a>";
             return $this;
         }
+
         foreach($out['article-body'] as $line) {
             $body .= "<p style='font-size: 1.6em; color: #666; text-align: left; float: left; margin: 2px; padding: 4px;'>{$line}</p>";
         }
+        
         $this->article = $body;
         return $this;
     }
