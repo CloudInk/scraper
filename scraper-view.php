@@ -105,7 +105,9 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
                             ";
             $x++;
+            echo $arr;
         }
+
     }
 
     ?>
