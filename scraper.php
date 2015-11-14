@@ -101,7 +101,7 @@ class scraper
                 $this->articles[$uid]['article-title'] = $results->item($x)->nodeValue;
                 $this->articles[$uid]['article-link'] = "{$this->url}{$links->item($x)->attributes->getNamedItem('href')->nodeValue}";
                 $this->articles[$uid]['article-image-src'] = $article_images_arr[$x];
-                $this->articles[$uid]['article-image-text'] = $article_alts_arr[$x];//$image_text_node->item($x)->attributes->getNamedItem('data-alt')->nodeValue;
+                $this->articles[$uid]['article-image-text'] = $article_alts_arr[$x];
                 $this->articles[$uid]['article-uid'] = $uid;
                 $this->articles[$uid]['article-body'] = '';
                 $x++;
@@ -155,7 +155,7 @@ class scraper
         foreach($out['article-body'] as $line) {
             $body .= "<p style='font-size: 1.6em; color: #666; text-align: left; float: left; margin: 2px; padding: 4px;'>{$line}</p>";
         }
-        
+
         $this->article = $body;
         return $this;
     }
