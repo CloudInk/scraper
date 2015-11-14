@@ -1,6 +1,6 @@
 <?php
 include('scraper.php');
-$s = new scraper();
+$s = new \TDW\IO\SCRAPER\scraper();
 
 if(isset($_GET['uid'])) {
     $s->scrapeTarget('index')->scrapeSingleArticleBody($_GET['uid']);
