@@ -43,24 +43,6 @@ class scraper
         return $this;
     }
 
-    function scrapeIndexArticles()
-    {
-            foreach($this->articles as $article) {
-                $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
-                $this->xpath = new DOMXPath($this->doc);
-                $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
-                $x = 0;
-                $i = 1;
-                while($x < $article_body->length) {
-                    $article_body_content = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p[{$i}]");
-                    $this->articles[$article['article-uid']]['article-body'][] = trim(preg_replace('/\s\s+/', ' ', $article_body_content->item(0)->nodeValue));
-                    $x++;
-                    $i++;
-                }
-            }
-        return $this;
-    }
-
     function scrapeTarget($target = 'index')
     {
         switch($target) {
@@ -115,6 +97,26 @@ class scraper
         }
         return $this;
     }
+
+
+    function scrapeIndexArticles()
+    {
+        foreach($this->articles as $article) {
+            $this->doc->loadHTMLFile($this->articles[$article['article-uid']]['article-link']);
+            $this->xpath = new DOMXPath($this->doc);
+            $article_body = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p");
+            $x = 0;
+            $i = 1;
+            while($x < $article_body->length) {
+                $article_body_content = $this->xpath->query("//div[contains(@class,'pane-content')]/div[@class='field field-name-body field-type-text-with-summary field-label-hidden']/p[{$i}]");
+                $this->articles[$article['article-uid']]['article-body'][] = trim(preg_replace('/\s\s+/', ' ', $article_body_content->item(0)->nodeValue));
+                $x++;
+                $i++;
+            }
+        }
+        return $this;
+    }
+
 
     function __destruct()
     {
