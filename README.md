@@ -21,7 +21,7 @@ $s->scrapeIndex();
 //Scrape Index and Articles, and don't output
 $s->scrapeIndex()->scrapeIndexArticles();
 
-//Full article array is stored in 
+//Full article array is stored in after scrapeIndex() has been called.
 $s->articles;
 
 //To expose the array you can simply
