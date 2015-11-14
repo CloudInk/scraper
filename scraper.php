@@ -7,7 +7,6 @@
 class scraper
 {
 
-
     function __construct($url = 'http://msnbc.com')
     {
         $this->url = $url;
