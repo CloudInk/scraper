@@ -79,6 +79,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     $arr = '';
     if (is_array($s->articles)) {
         $x = 0;
+
         foreach ($s->articles as $article) {
 
             $arr .= "
@@ -105,9 +106,9 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
                             ";
             $x++;
-            echo $arr;
-        }
 
+        }
+        echo $arr;
     }
 
     ?>
