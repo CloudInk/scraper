@@ -6,8 +6,8 @@
 - `scraper-view.php`
 - `scraper-article-view.php`
  
-##### Live Demo
-- ##### http://tdw.io/scraper/scraper-view.php
+##### Live Demo:
+- http://tdw.io/scraper/scraper-view.php
 
 ##### Scrapes: 
 - Article Headline
