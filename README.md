@@ -26,7 +26,8 @@
 ```php 
 
 include('scraper.php');
-$s = new \TDW\IO\SCRAPER\scraper();
+use \TDW\IO\scraper as scraper;
+$s = new scraper();
 
 // Load the $s->articles array with only the index page data
 $s->scrapeTarget('index');
