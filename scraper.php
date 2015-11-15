@@ -111,7 +111,7 @@ class scraper
                     $this->articles[$uid]['article-image-text'] = $article_alts_arr[$x];
                     $this->articles[$uid]['article-uid'] = $uid;
                     $this->articles[$uid]['article-body'] = '';
-                    $this->trending .= "<a href='scraper-article-view.php?uid={$this->articles[$uid]['article-link']}'>{$this->articles[$uid]['article-link']}</a> &middot;";
+                    $this->trending .= "<a href='scraper-article-view.php?uid={$this->articles[$uid]['article-link']}'>{$this->articles[$uid]['article-title']}</a> &middot;";
                     $x++;
                     $i++;
                 }
