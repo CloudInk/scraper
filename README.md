@@ -1,7 +1,7 @@
 # MSNBC Headline Scraper
 
 #### Scrapes top 10 headlines (in order) from msnbc.com.
-- Uses the DOMDocument object. Also uses xpath to locate the tags that hold the information we're looking to consume. 
+- Uses the DOMDocument object. Also uses xpath to locate target node values. 
 - For the sake of speed and time, I totally (of course) opted against using any kind of regex or similar.
 - If you're familiar with DOM and XPath it's actually pretty easy. 
 
