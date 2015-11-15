@@ -3,10 +3,10 @@ MSNBC Headline Scraper
 Scrapes top 10 headlines (in order) from msnbc.com.
 
 Scrapes: 
-   -- Article Headline
-   -- Article Body
-   -- Article Image
-   -- Article Link
+- Article Headline
+- Article Body
+- Article Image
+- Article Link
    
 Returns:
    -- JSON
