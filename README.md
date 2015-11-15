@@ -41,15 +41,22 @@ $s->printJSONScrapes();
 // You can chain the object
 $s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 
-//array generated after calling scrapeTarget()
-$s->articles;  
-
 // Generate single Article array scrapeSingleArticleBody($article_url)
 // See the file: scraper-article-view.php for an example of how this is used
 $s->scrapeSingleArticleBody($article_url);
 
+//// Objects ////
+
 // Single article array generated after scrapeSingleArticleBody() has been called
 $s->article;
+
+// Array of all articles, may contain article body
+$s->articles;
+
+// List of top 10 trending articles
+$s->trending
+
+//// End Objects ////
 
 //prints array with <pre> tags
 $s->print_rr($s->articles);
