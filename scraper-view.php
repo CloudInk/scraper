@@ -67,7 +67,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
                              <div class='small-4 columns' style=''>
                                 <ul class='pricing-table' style='height: 521px;'>
-                                    <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
+                                    <li class='title'>{$article['article-title']}<br><small><a href='{$article['article-link']}'>View on MSNBC.com</a></small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
                                     <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Article</a></li>
