@@ -1,18 +1,18 @@
 # MSNBC Headline Scraper
 #### Scrapes top 10 headlines (in order) from msnbc.com.
 
-Scrapes: 
+##### Scrapes: 
 - Article Headline
 - Article Body
 - Article Image
 - Article Link
    
-Returns:
+##### Returns:
 - JSON
 - PHP Array
 
 
-Usage:
+##### Usage:
 ```php 
 
 include('scraper.php');
@@ -43,7 +43,7 @@ $s->article;
 //prints array with <pre> tags
 $s->print_rr($s->articles);
 ```
-Output Examples:
+##### Output Examples:
 ```php
 /*
 
