@@ -15,16 +15,38 @@ Returns:
 
 Usage:
 ```php 
+
 include('scraper.php');
+$s = new \TDW\IO\SCRAPER\scraper();
 
-$s = new scraper();
+// Load the $s->articles array with only the index page data
+$s->scrapeTarget('index');
 
-//You always have to call scrapeTarget('index') first -- it loads the array with the article URLs.
+// Load the $s->articles array with index and article body data
+$s->scrapeTarget('index')->scrapeTarget('articles');
 
-//Scrape Index and Articles, then output as JSON
+// Output the $s->articles array
+$s->printJSONScrapes();
+
+// You can chain the object
 $s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 
+//$s object information
+
+//array generated after calling scrapeTarget()
+$s->articles;  
+
+//array generated for scraper-article-view.php (see that page for example)
+$s->article;
+
+//prints array with <pre> tags
+$s->print_rr($s->articles);
+
 /*
+
+Example: index and article scrape JSON response (truncated for this readme)
+$s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
+
 {  
    "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  
       "article-title":"ISIS claims attacks",
@@ -37,10 +59,12 @@ $s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 }
 */
 
-//Scrape only Index, then output as JSON
-$s->scrapeTarget('index')->printJSONScrapes();
 
 /*
+
+Example: index scrape JSON response (truncated for this readme)
+$s->scrapeTarget('index')->printJSONScrapes();
+
 {  
    "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  
       "article-title":"ISIS claims attacks",
@@ -53,23 +77,19 @@ $s->scrapeTarget('index')->printJSONScrapes();
 }
 */
 
-//Scrape only Index, and don't output
-$s->scrapeTarget('index');
 
-//Scrape Index and Articles, and don't output
-$s->scrapeTarget('index')->scrapeTarget('articles');
-
-//Scrape a single article body
-//See the file scraper-article-view.php for an example
-$s->scrapeTarget('index')->scrapeSingleArticleBody('msnbc.com article url goes here');
-
-//Full scrape array stored in `articles` after scrapeTarget('index') has been called.
-$s->articles;
-
-//To expose the array you can simply
-$s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles);
 
 /*
+
+Example: Print PHP Array
+
+// If you haven't already run scrapTarget('index')
+$s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles);
+
+// If you have already run scrapeTarget('index') then $s->articles is already populated
+$s->print_rr($s->articles);
+
+
 Array
 (
     [8a5508194288b21aa25ad2d5028bb0c493ebde9b] => Array
