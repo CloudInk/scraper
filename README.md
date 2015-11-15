@@ -4,8 +4,8 @@
 ###### http://tdw.io/scraper/scraper-view.php
 
 ##### Example Files:
-- scraper-view.php
-- scraper-article-view.php
+- `scraper-view.php`
+- `scraper-article-view.php`
 
 ##### Scrapes: 
 - Article Headline
