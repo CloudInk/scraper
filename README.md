@@ -9,8 +9,9 @@ Scrapes:
 - Article Link
    
 Returns:
-   -- JSON
-   -- PHP Array
+- JSON
+- PHP Array
+
 
 Usage:
 ```php
