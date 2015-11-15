@@ -45,21 +45,23 @@ $s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 // See the file: scraper-article-view.php for an example of how this is used
 $s->scrapeSingleArticleBody($article_url);
 
+//prints array with <pre> tags
+$s->print_rr($s->articles);
+
+
 //// Objects ////
 
-// Single article array generated after scrapeSingleArticleBody() has been called
+// Single article array generated after scrapeSingleArticleBody() has been called (above)
 $s->article;
 
-// Array of all articles, may contain article body
+// Array of all articles, may contain article body depending on scrapeTarget()
 $s->articles;
 
-// List of top 10 trending articles
+// List of top 10 trending articles, always present as long as scrapeTarget('index') has run
 $s->trending
 
 //// End Objects ////
 
-//prints array with <pre> tags
-$s->print_rr($s->articles);
 ```
 ##### Output Examples:
 ```php
