@@ -35,11 +35,28 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Headlines - MSNBC Version <br>
+            <li class='title'>Scraper v1 - Trending - MSNBC Version <br>
+                <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
+            </li>
+            <li class="bullet-item">
+                <span style="float: left;"><strong>Trending Headlines</strong></span>
+                <br><br>
+                <?
+                foreach($s->trending as $trend) {
+                    echo " &middot; {$trend} ";
+                }
+                ?></li>
+        </ul>
+
+    </div>
+    <div class='small-12 columns' style=''>
+        <ul class='pricing-table'>
+            <li class='title'>Scraper v1 - Headline Teasers - MSNBC Version <br>
                 <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
 
         </ul>
+
     </div>
     <?php
     if (is_array($s->articles)) {
@@ -70,7 +87,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Articles - MSNBC Version <br>
+            <li class='title'>Scraper v1 - Full Articles - MSNBC Version <br>
                 <small><a href="scraper-view.php?json=2">View JSON Output</a></small>
             </li>
 
