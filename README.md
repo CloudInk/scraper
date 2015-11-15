@@ -7,9 +7,12 @@
 - `scraper-article-view.php`
  
 ##### Live Demo:
-- http://tdw.io/scraper/scraper-view.php [html view]
-- http://tdw.io/scraper/scraper-view.php?json=1 [JSON view, index scrape]
-- http://tdw.io/scraper/scraper-view.php?json=2 [JSON view, index & article scrape]
+- HTML view
+-- http://tdw.io/scraper/scraper-view.php
+- JSON view, index scrape
+-- http://tdw.io/scraper/scraper-view.php?json=1 
+- JSON view, index & article scrape
+-- http://tdw.io/scraper/scraper-view.php?json=2 
 
 ##### Scrapes: 
 - Article Headline
