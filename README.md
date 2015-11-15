@@ -2,6 +2,9 @@
 
 #### Scrapes top 10 headlines (in order) from msnbc.com.
 
+##### Required Files:
+- `scraper.php`
+
 ##### Example Files:
 - `scraper-view.php`
 - `scraper-article-view.php`
