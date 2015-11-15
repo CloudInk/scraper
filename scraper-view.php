@@ -1,6 +1,7 @@
 <?php
 include('scraper.php');
-$s = new \TDW\IO\SCRAPER\scraper();
+use \TDW\IO\scraper as scraper;
+$s = new scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
     header("Content-Type: application/json;");
