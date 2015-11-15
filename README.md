@@ -25,7 +25,7 @@ $s->scrapeTarget('index');
 // Load the $s->articles array with index and article body data
 $s->scrapeTarget('index')->scrapeTarget('articles');
 
-// Output the $s->articles array
+// Output the $s->articles array in JSON format
 $s->printJSONScrapes();
 
 // You can chain the object
