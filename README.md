@@ -43,7 +43,9 @@ $s->article;
 
 //prints array with <pre> tags
 $s->print_rr($s->articles);
+```
 
+```php
 /*
 
 Example: index and article scrape JSON response (truncated for this readme)
