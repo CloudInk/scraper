@@ -49,11 +49,6 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
         </ul>
 
     </div>
-    <div class='small-12 columns' style=''>
-        <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Headline Teasers - MSNBC Version</li>
-        </ul>
-    </div>
     <?php
     if (is_array($s->articles)) {
         $x = 0;
@@ -63,7 +58,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
                              <div class='small-6 columns' style=''>
                                 <ul class='pricing-table' style='height: auto;'>
-                                    <li class='title'></li>
+
                                     <li class='price'><small>{$article['article-title']}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
