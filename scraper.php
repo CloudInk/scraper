@@ -2,7 +2,6 @@
 namespace TDW\IO;
 
 /* Scraper V1 */
-/* Class assumes you've installed the proper libs for DOM */
 /* timdwalton@gmail.com */
 /* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
 
@@ -15,16 +14,19 @@ class scraper implements scraperService
 
     function __construct()
     {
-        $this->url = 'http://msnbc.com';
-        $this->rcount = 10;
-        $this->response = '';
-        $this->articles = [];
-        $this->article = [];
-        $this->doc = new \DOMDocument();
-        libxml_use_internal_errors(true);
-        $this->doc->preserveWhiteSpace = false;
-        $this->xpath = '';
-
+        try {
+            $this->url = 'http://msnbc.com';
+            $this->rcount = 10;
+            $this->response = '';
+            $this->articles = [];
+            $this->article = [];
+            $this->doc = new \DOMDocument();
+            libxml_use_internal_errors(true);
+            $this->doc->preserveWhiteSpace = false;
+            $this->xpath = '';
+        } catch (\Exception $err) {
+            echo "{$err->getMessage()}";
+        }
     }
 
     function printJSONScrapes()
