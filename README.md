@@ -8,7 +8,7 @@
  
 ##### Live Demo:
 * HTML view
-** http://tdw.io/scraper/scraper-view.php
+** asd
 - JSON view, index scrape
 -- http://tdw.io/scraper/scraper-view.php?json=1 
 - JSON view, index & article scrape
