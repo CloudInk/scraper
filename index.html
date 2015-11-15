@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Scraper : MSNBC Headline Scraper">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Scraper</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/CloudInk/scraper">View on GitHub</a>
+
+          <h1 id="project_title">Scraper</h1>
+          <h2 id="project_tagline">MSNBC Headline Scraper</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/CloudInk/scraper/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/CloudInk/scraper/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="msnbc-headline-scraper" class="anchor" href="#msnbc-headline-scraper" aria-hidden="true"><span class="octicon octicon-link"></span></a>MSNBC Headline Scraper</h1>
+
+<h4>
+<a id="scrapes-top-10-headlines-in-order-from-msnbccom" class="anchor" href="#scrapes-top-10-headlines-in-order-from-msnbccom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scrapes top 10 headlines (in order) from msnbc.com.</h4>
+
+<ul>
+<li>Uses the DOMDocument object. Also uses xpath to locate target node values. </li>
+<li>If you're familiar with DOM and XPath it's actually pretty easy. </li>
+</ul>
+
+<h5>
+<a id="required-files" class="anchor" href="#required-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Required Files:</h5>
+
+<ul>
+<li><code>scraper.php</code></li>
+</ul>
+
+<h5>
+<a id="example-files" class="anchor" href="#example-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Files:</h5>
+
+<ul>
+<li><code>scraper-view.php</code></li>
+<li><code>scraper-article-view.php</code></li>
+</ul>
+
+<h5>
+<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo:</h5>
+
+<ul>
+<li>HTML View: <a href="http://tdw.io/scraper/scraper-view.php">http://tdw.io/scraper/scraper-view.php</a>
+</li>
+<li>JSON view, index scrape: <a href="http://tdw.io/scraper/scraper-view.php?json=1">http://tdw.io/scraper/scraper-view.php?json=1</a> </li>
+<li>JSON view, index &amp; article scrape: <a href="http://tdw.io/scraper/scraper-view.php?json=2">http://tdw.io/scraper/scraper-view.php?json=2</a> </li>
+</ul>
+
+<h5>
+<a id="scrapes" class="anchor" href="#scrapes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scrapes:</h5>
+
+<ul>
+<li>Article Headline</li>
+<li>Article Body</li>
+<li>Article Image</li>
+<li>Article Link</li>
+</ul>
+
+<h5>
+<a id="returns" class="anchor" href="#returns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Returns:</h5>
+
+<ul>
+<li>JSON</li>
+<li>PHP Array</li>
+</ul>
+
+<h5>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage:</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">include</span>(<span class="pl-s"><span class="pl-pds">'</span>scraper.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">\TDW\IO\scraper</span> <span class="pl-k">as</span> <span class="pl-c1">scraper</span>;</span>
+<span class="pl-s1"><span class="pl-smi">$s</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">scraper</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Load the $s-&gt;articles array with only the index page data</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Load the $s-&gt;articles array with index and article body data</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Output the $s-&gt;articles array in JSON format</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>printJSONScrapes();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// You can chain the object</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>printJSONScrapes();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Generate single Article array scrapeSingleArticleBody($article_url)</span></span>
+<span class="pl-s1"><span class="pl-c">// See the file: scraper-article-view.php for an example of how this is used</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeSingleArticleBody(<span class="pl-smi">$article_url</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">//prints array with &lt;pre&gt; tags</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>print_rr(<span class="pl-smi">$s</span><span class="pl-k">-&gt;</span><span class="pl-smi">articles</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">//// Objects ////</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Single article array generated after scrapeSingleArticleBody() has been called (above)</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span><span class="pl-smi">article</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// Array of all articles, may contain article body depending on scrapeTarget()</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span><span class="pl-smi">articles</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">// List of top 10 trending articles, always present as long as scrapeTarget('index') has run</span></span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span><span class="pl-smi">trending</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">//// End Objects ////</span></span>
+<span class="pl-s1"></span></pre></div>
+
+<h5>
+<a id="output-examples" class="anchor" href="#output-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output Examples:</h5>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c">/*</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">Example: index and article scrape JSON response (truncated for this readme)</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;scrapeTarget('index')-&gt;scrapeTarget('articles')-&gt;printJSONScrapes();</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">{  </span></span>
+<span class="pl-s1"><span class="pl-c">   "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  </span></span>
+<span class="pl-s1"><span class="pl-c">      "article-title":"ISIS claims attacks",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-link":"http:\/\/msnbc.com\/msnbc\/paris-attacks-france-hollande-blames-isis",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-image-src":"http:\/\/www.msnbc.com\/sites\/msnbc\/files\/styles\/homepage--3-2--1_5x-1245x830\/public\/articles\/rts6zac__1447506091.jpg?itok=ByGHMqR0",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-image-text":"French President Francois Hollande speaks with Prime Minister Manuel Valls at the Elysee Palace in Paris, France, Nov. 14, 2015, following a meeting the day after a series of deadly attacks in the French capital. (Photo by Philippe Wojazer\/Reuters)",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-uid":"ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-body":["some article body that is really super long text"]</span></span>
+<span class="pl-s1"><span class="pl-c">   }</span></span>
+<span class="pl-s1"><span class="pl-c">}</span></span>
+<span class="pl-s1"><span class="pl-c">*/</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/*</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">Example: index scrape JSON response (truncated for this readme)</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;scrapeTarget('index')-&gt;printJSONScrapes();</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">{  </span></span>
+<span class="pl-s1"><span class="pl-c">   "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  </span></span>
+<span class="pl-s1"><span class="pl-c">      "article-title":"ISIS claims attacks",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-link":"http:\/\/msnbc.com\/msnbc\/paris-attacks-france-hollande-blames-isis",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-image-src":"http:\/\/www.msnbc.com\/sites\/msnbc\/files\/styles\/homepage--3-2--1_5x-1245x830\/public\/articles\/rts6zac__1447506091.jpg?itok=ByGHMqR0",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-image-text":"French President Francois Hollande speaks with Prime Minister Manuel Valls at the Elysee Palace in Paris, France, Nov. 14, 2015, following a meeting the day after a series of deadly attacks in the French capital. (Photo by Philippe Wojazer\/Reuters)",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-uid":"ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3",</span></span>
+<span class="pl-s1"><span class="pl-c">      "article-body":""</span></span>
+<span class="pl-s1"><span class="pl-c">   }</span></span>
+<span class="pl-s1"><span class="pl-c">}</span></span>
+<span class="pl-s1"><span class="pl-c">*/</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c">/*</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">Example: Print PHP Array</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">// If you haven't already run scrapTarget('index')</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;print_rr($s-&gt;scrapeTarget('index')-&gt;scrapeTarget('articles')-&gt;articles);</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">// If you have already run scrapeTarget('index') then $s-&gt;articles is already populated</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;print_rr($s-&gt;articles);</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">Array</span></span>
+<span class="pl-s1"><span class="pl-c">(</span></span>
+<span class="pl-s1"><span class="pl-c">    [8a5508194288b21aa25ad2d5028bb0c493ebde9b] =&gt; Array</span></span>
+<span class="pl-s1"><span class="pl-c">        (</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-title] =&gt; Terror in Paris</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-link] =&gt; http://msnbc.com/msnbc/paris-attacks-france-hollande-blames-isis</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-image-src] =&gt; http://www.msnbc.com/sites/msnbc/files/styles/homepage--3-2--1_5x-1245x830/public/rts6x0s__1447515937.jpg?itok=B1dJYFwn</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-image-text] =&gt; A French policeman assists a blood-covered victim near the Bataclan concert hall following attacks in Paris, France, Nov. 14, 2015. (Photo by Philippe Wojazer/Reuters)</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-uid] =&gt; 8a5508194288b21aa25ad2d5028bb0c493ebde9b</span></span>
+<span class="pl-s1"><span class="pl-c">            [article-body] =&gt; Array</span></span>
+<span class="pl-s1"><span class="pl-c">                (</span></span>
+<span class="pl-s1"><span class="pl-c">                    [0] =&gt; PARIS - French President Francois Hollande vowed a merciless response to the deadliest attacks on the countrys soil since World War II. ISIS‚ claimed responsibility Saturday for a coordinated assault on Paris.</span></span>
+<span class="pl-s1"><span class="pl-c">                    [1] =&gt; A state of emergency was declared and France deployed 1,500 troops after a near-simultaneous series of explosions and shootings brought the city to a horrified standstill overnight. The death toll rose to 127 and 200 other people were wounded, officials said.</span></span>
+<span class="pl-s1"><span class="pl-c">                )</span></span>
+<span class="pl-s1"><span class="pl-c"></span></span>
+<span class="pl-s1"><span class="pl-c">        )</span></span>
+<span class="pl-s1"><span class="pl-c">)</span></span>
+<span class="pl-s1"><span class="pl-c">*/</span></span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Scraper maintained by <a href="https://github.com/CloudInk">CloudInk</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
