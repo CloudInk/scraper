@@ -12,7 +12,7 @@ class scraper
         try {
             $this->url = 'http://msnbc.com';
             $this->rcount = 10;
-            $this->trending = '';
+            $this->trending = [];
             $this->articles = [];
             $this->article = [];
             $this->doc = new \DOMDocument();
@@ -111,7 +111,7 @@ class scraper
                     $this->articles[$uid]['article-image-text'] = $article_alts_arr[$x];
                     $this->articles[$uid]['article-uid'] = $uid;
                     $this->articles[$uid]['article-body'] = '';
-                    $this->trending .= "<a href='scraper-article-view.php?uid={$this->articles[$uid]['article-link']}'>{$this->articles[$uid]['article-title']}</a>";
+                    $this->trending[] = " <a href='scraper-article-view.php?uid={$this->articles[$uid]['article-link']}'>{$this->articles[$uid]['article-title']}</a> ";
                     $x++;
                     $i++;
                 }
