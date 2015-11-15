@@ -44,7 +44,7 @@ $s->article;
 //prints array with <pre> tags
 $s->print_rr($s->articles);
 ```
-
+Output Examples:
 ```php
 /*
 
