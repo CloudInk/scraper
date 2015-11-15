@@ -35,11 +35,11 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Trending - MSNBC Version <br>
+            <li class="price">Scraper - MSNBC Version <hr>
                 <small><a href="scraper-view.php?json=1">View Index JSON Output</a> | <a href="scraper-view.php?json=2">View Index & Article JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
             <li class="bullet-item">
-                <span style="float: left;"><strong>Trending Headlines</strong></span>
+                <span ><strong>Trending Headlines</strong></span>
                 <br><br>
                 <?
                 foreach($s->trending as $trend) {
