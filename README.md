@@ -1,6 +1,7 @@
 # MSNBC Headline Scraper
-###### http://tdw.io/scraper/scraper-view.php
+
 #### Scrapes top 10 headlines (in order) from msnbc.com.
+###### http://tdw.io/scraper/scraper-view.php
 
 ##### Example Files:
 - scraper-view.php
