@@ -36,7 +36,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
             <li class='title'>Scraper v1 - Trending - MSNBC Version <br>
-                <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
+                <small><a href="scraper-view.php?json=1">View Index JSON Output</a> | <a href="scraper-view.php?json=2">View Index & Article JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
             <li class="bullet-item">
                 <span style="float: left;"><strong>Trending Headlines</strong></span>
@@ -51,12 +51,8 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     </div>
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Headline Teasers - MSNBC Version <br>
-                <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
-            </li>
-
+            <li class='title'>Scraper v1 - Headline Teasers - MSNBC Version</li>
         </ul>
-
     </div>
     <?php
     if (is_array($s->articles)) {
@@ -65,12 +61,13 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
             echo "
 
-                             <div class='small-4 columns' style=''>
-                                <ul class='pricing-table' style='height: 521px;'>
-                                    <li class='title'>{$article['article-title']}<br><small><a href='{$article['article-link']}'>View on MSNBC.com</a></small></li>
+                             <div class='small-6 columns' style=''>
+                                <ul class='pricing-table' style='height: auto;'>
+                                    <li class='title'></li>
+                                    <li class='price'><small>{$article['article-title']}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
-                                    <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Article</a></li>
+                                    <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Scraped Article</a></li>
                                 </ul>
                             </div>
 
@@ -82,8 +79,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     ?>
 
 </div>
-<hr>
-<hr>
+
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
