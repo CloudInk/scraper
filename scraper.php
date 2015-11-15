@@ -10,12 +10,13 @@ class scraper
     function __construct()
     {
         try {
+            header('Content-Type: text/html; charset=utf-8');
             $this->url = 'http://msnbc.com';
             $this->rcount = 10;
             $this->trending = [];
             $this->articles = [];
             $this->article = [];
-            $this->doc = new \DOMDocument();
+            $this->doc = new \DOMDocument('1.0', 'UTF-8');
             libxml_use_internal_errors(true);
             $this->doc->preserveWhiteSpace = false;
             $this->xpath = '';
