@@ -11,7 +11,13 @@ interface scraperService {
     public function __toString();
 }
 
-class scraper implements scraperService
+abstract class masterScraper
+{
+    abstract function __toString();
+    abstract function scrapeTarget();
+
+}
+class scraper extends masterScraper implements  scraperService
 {
 
     function __construct()
@@ -169,7 +175,7 @@ class scraper implements scraperService
         return $this;
     }
 
-    function __toString(&$msg)
+    function __toString()
     {
         $msg = 'Be sure to drink your Ovaltine!';
         return $msg;
