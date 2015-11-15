@@ -1,5 +1,5 @@
 <?php
-namespace TDW\IO\SCRAPER;
+namespace TDW\IO;
 
 /* Scraper V1 */
 /* Class assumes you've installed the proper libs for DOM */
