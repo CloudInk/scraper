@@ -7,6 +7,8 @@ namespace TDW\IO;
 
 interface scraperService {
     public function scrapeTarget();
+    //Override method
+    public function __toString();
 }
 
 class scraper implements scraperService
@@ -167,6 +169,11 @@ class scraper implements scraperService
         return $this;
     }
 
+    function __toString(&$msg)
+    {
+        $msg = 'Be sure to drink your Ovaltine!';
+        return $msg;
+    }
 
     function __destruct()
     {
