@@ -1,5 +1,4 @@
-# scraper
-MSNBC Headline Scraper
+# MSNBC Headline Scraper
 - Scrapes top 10 headlines (in order) from msnbc.com.
 
 Scrapes: 
