@@ -5,14 +5,12 @@ $s = new scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
     header("Content-Type: application/json;");
-    //exit($s->scrapeIndex()->printJSONScrapes());
-    exit($s->scrapeTarget('index')->printJSONScrapes());
+    exit($s->scrape('index')->printJSONScrapes());
 } elseif(isset($_GET['json']) && $_GET['json'] == 2) {
     header("Content-Type: application/json;");
-    //exit($s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles));
-    exit($s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes());
+    exit($s->scrape('index')->scrape('articles')->printJSONScrapes());
 } else {
-    $s->scrapeTarget('index')->scrapeTarget('articles');
+    $s->scrape('index')->scrape('articles');
 }
 ?>
 
