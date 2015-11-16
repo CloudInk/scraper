@@ -22,6 +22,7 @@ http://cloudink.github.io/scraper/
 - Article Body
 - Article Image
 - Article Link
+- Trending Articles
    
 ##### Returns:
 - JSON
@@ -30,22 +31,21 @@ http://cloudink.github.io/scraper/
 
 ##### Usage:
 ```php 
-
 include('scraper.php');
-use \TDW\IO\scraper as scraper;
+use \TDW\IO\ScrapeCore as scraper;
 $s = new scraper();
 
 // Load the $s->articles array with only the index page data
-$s->scrapeTarget('index');
+$s->scrape('index');
 
 // Load the $s->articles array with index and article body data
-$s->scrapeTarget('index')->scrapeTarget('articles');
+$s->scrape('index')->scrape('articles');
 
 // Output the $s->articles array in JSON format
 $s->printJSONScrapes();
 
 // You can chain the object
-$s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
+$s->scrape('index')->scrape('articles')->printJSONScrapes();
 
 // Generate single Article array scrapeSingleArticleBody($article_url)
 // See the file: scraper-article-view.php for an example of how this is used
@@ -74,7 +74,7 @@ $s->trending
 /*
 
 Example: index and article scrape JSON response (truncated for this readme)
-$s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
+$s->scrape('index')->scrape('articles')->printJSONScrapes();
 
 {  
    "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  
@@ -92,7 +92,7 @@ $s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes();
 /*
 
 Example: index scrape JSON response (truncated for this readme)
-$s->scrapeTarget('index')->printJSONScrapes();
+$s->scrape('index')->printJSONScrapes();
 
 {  
    "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  
@@ -112,10 +112,10 @@ $s->scrapeTarget('index')->printJSONScrapes();
 
 Example: Print PHP Array
 
-// If you haven't already run scrapTarget('index')
-$s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles);
+// If you haven't already run scrape('index')
+$s->print_rr($s->scrape('index')->scrape('articles')->articles);
 
-// If you have already run scrapeTarget('index') then $s->articles is already populated
+// If you have already run scrape('index') then $s->articles is already populated
 $s->print_rr($s->articles);
 
 
