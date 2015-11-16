@@ -10,7 +10,6 @@ class scraper
     function __construct()
     {
         try {
-            header('Content-Type: text/html; charset=utf-8');
             $this->url = 'http://msnbc.com';
             $this->rcount = 10;
             $this->trending = [];
