@@ -14,7 +14,7 @@
 - JSON view, index & article scrape: http://tdw.io/scraper/scraper-view.php?json=2 
 
 ##### Requires 
-- `scraper.php`
+- `\scraper\scraper.php`
 - `PHP >= 5.5.9`
 - `libxml2 Version => 2.7.8`
 
