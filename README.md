@@ -4,9 +4,12 @@ http://cloudink.github.io/scraper/
 #### Scrapes top 10 headlines (in order) from msnbc.com.
 - Uses the DOMDocument object. Also uses xpath to locate target node values. 
 - If you're familiar with DOM and XPath it's actually pretty easy. 
+- Uses native PHP methods and objects. Nothing but libxml.
 
-##### Required Files:
+##### Requires
 - `scraper.php`
+- `PHP >= 5.5.9`
+- `libxml2 Version => 2.7.8`
 
 ##### Example Files:
 - `scraper-view.php`
