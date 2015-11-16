@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="tdw.io">
+  <component name="PublishConfigData" serverName="tdw.io" uploadOnCheckin="fe156d4b-3936-47b6-af34-7fada8dda23a">
     <serverData>
       <paths name="PRODUCTION">
         <serverdata>
@@ -38,5 +38,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="tdw.io" />
   </component>
 </project>

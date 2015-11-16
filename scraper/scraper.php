@@ -3,7 +3,8 @@ namespace TDW\IO;
 
 /* Scraper V1 */
 /* timdwalton@gmail.com */
-/* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
+/* @link https://github.com/CloudInk/scraper/blob/master/README.md */
+/* @link http://cloudink.github.io/scraper/ */
 
 class ScrapeCore
 {
