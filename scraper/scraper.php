@@ -55,7 +55,7 @@ class ScrapeCore
     }
 
     function scrapeIndex()
-    {
+    { 
         try {
 
             $this->doc->loadHTMLFile($this->url);
@@ -182,4 +182,5 @@ class ScrapeCore
         unset($this);
     }
 }
+
 ?>

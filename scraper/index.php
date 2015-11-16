@@ -1,16 +1,17 @@
 <?php
 include('scraper.php');
-use \TDW\IO\ScrapeCore as scraper;
-$s = new scraper();
+$s = new \TDW\IO\SCRAPER\scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
     header("Content-Type: application/json;");
-    exit($s->scrape('index')->printJSONScrapes());
+    //exit($s->scrapeIndex()->printJSONScrapes());
+    exit($s->scrapeTarget('index')->printJSONScrapes());
 } elseif(isset($_GET['json']) && $_GET['json'] == 2) {
     header("Content-Type: application/json;");
-    exit($s->scrape('index')->scrape('articles')->printJSONScrapes());
+    //exit($s->print_rr($s->scrapeTarget('index')->scrapeTarget('articles')->articles));
+    exit($s->scrapeTarget('index')->scrapeTarget('articles')->printJSONScrapes());
 } else {
-    $s->scrape('index')->scrape('articles');
+    $s->scrapeTarget('index')->scrapeTarget('articles');
 }
 ?>
 
@@ -33,19 +34,11 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class="price">Scraper - MSNBC Version <hr>
-                <small><a href="scraper-view.php?json=1">View Index JSON Output</a> | <a href="scraper-view.php?json=2">View Index & Article JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
+            <li class='title'>Scraper v1 - Headlines - MSNBC Version <br>
+                <small><a href="scraper-view.php?json=1">View JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
-            <li class="bullet-item">
-                <span ><strong>Trending Headlines</strong></span>
-                <br><br>
-                <?
-                foreach($s->trending as $trend) {
-                    echo " &middot; {$trend} ";
-                }
-                ?></li>
-        </ul>
 
+        </ul>
     </div>
     <?php
     if (is_array($s->articles)) {
@@ -54,13 +47,12 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
 
             echo "
 
-                             <div class='small-6 columns' style=''>
-                                <ul class='pricing-table' style='height: auto;'>
-
-                                    <li class='price'><small>{$article['article-title']}</small></li>
+                             <div class='small-4 columns' style=''>
+                                <ul class='pricing-table' style='height: 521px;'>
+                                    <li class='title'>{$article['article-title']}<br><small>{$s->url}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
                                     <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
-                                    <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Scraped Article</a></li>
+                                    <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Article</a></li>
                                 </ul>
                             </div>
 
@@ -72,11 +64,12 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     ?>
 
 </div>
-
+<hr>
+<hr>
 <div class="row">
     <div class='small-12 columns' style=''>
         <ul class='pricing-table'>
-            <li class='title'>Scraper v1 - Full Articles - MSNBC Version <br>
+            <li class='title'>Scraper v1 - Articles - MSNBC Version <br>
                 <small><a href="scraper-view.php?json=2">View JSON Output</a></small>
             </li>
 
