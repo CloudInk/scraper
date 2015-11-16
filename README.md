@@ -8,7 +8,7 @@ http://tdw.io/sc/sc.php?id=02-43-37.png
 - If you're familiar with DOM and XPath it's actually pretty easy. 
 - Uses native PHP methods and objects. Nothing but libxml.
 
-##### Requires
+##### Requires 
 - `scraper.php`
 - `PHP >= 5.5.9`
 - `libxml2 Version => 2.7.8`
