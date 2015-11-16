@@ -1,13 +1,13 @@
 <?php
 include('scraper.php');
-use \TDW\IO\scraper as scraper;
+use \TDW\IO\ScrapeCore as scraper;
 $s = new scraper();
 
 
 if(isset($_GET['uid'])) {
     $s->scrapeTarget('index')->scrapeSingleArticleBody($_GET['uid']);
 } else {
-    header('location: scraper-view.php');
+    header('location: /scraper/scraper-view.php');
 }
 
 if (is_array($s->articles)) {
