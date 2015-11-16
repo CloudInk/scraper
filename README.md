@@ -1,5 +1,5 @@
 # MSNBC Headline Scraper
-![alt tag](http://tdw.io/sc/sc.php?id=02-43-37.png)
+(http://tdw.io/sc/sc.php?id=02-43-37.png)
 http://cloudink.github.io/scraper/
 
 #### Scrapes top 10 headlines (in order) from msnbc.com.
