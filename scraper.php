@@ -1,11 +1,11 @@
 <?php
 namespace TDW\IO;
 
-    /* Scraper V1 */
-    /* timdwalton@gmail.com */
-    /* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
+/* Scraper V1 */
+/* timdwalton@gmail.com */
+/* For usage see: https://github.com/CloudInk/scraper/blob/master/README.md */
 
-class scraper
+class ScrapeCore
 {
     function __construct()
     {
@@ -116,13 +116,9 @@ class scraper
                     $i++;
                 }
             }
-
-            return $this;
-
         } catch (\Exception $err) {
             echo "{$err->getMessage()}";
         }
-
         return $this;
     }
 
@@ -186,5 +182,4 @@ class scraper
         unset($this);
     }
 }
-
 ?>
