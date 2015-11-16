@@ -41,19 +41,24 @@
         <h1>
 <a id="msnbc-headline-scraper" class="anchor" href="#msnbc-headline-scraper" aria-hidden="true"><span class="octicon octicon-link"></span></a>MSNBC Headline Scraper</h1>
 
+<p><a href="http://cloudink.github.io/scraper/">http://cloudink.github.io/scraper/</a></p>
+
 <h4>
 <a id="scrapes-top-10-headlines-in-order-from-msnbccom" class="anchor" href="#scrapes-top-10-headlines-in-order-from-msnbccom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scrapes top 10 headlines (in order) from msnbc.com.</h4>
 
 <ul>
 <li>Uses the DOMDocument object. Also uses xpath to locate target node values. </li>
 <li>If you're familiar with DOM and XPath it's actually pretty easy. </li>
+<li>Uses native PHP methods and objects. Nothing but libxml.</li>
 </ul>
 
 <h5>
-<a id="required-files" class="anchor" href="#required-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Required Files:</h5>
+<a id="requires" class="anchor" href="#requires" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requires</h5>
 
 <ul>
 <li><code>scraper.php</code></li>
+<li><code>PHP &gt;= 5.5.9</code></li>
+<li><code>libxml2 Version =&gt; 2.7.8</code></li>
 </ul>
 
 <h5>
@@ -82,6 +87,7 @@
 <li>Article Body</li>
 <li>Article Image</li>
 <li>Article Link</li>
+<li>Trending Articles</li>
 </ul>
 
 <h5>
@@ -95,22 +101,21 @@
 <h5>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage:</h5>
 
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-k">include</span>(<span class="pl-s"><span class="pl-pds">'</span>scraper.php<span class="pl-pds">'</span></span>);</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">\TDW\IO\scraper</span> <span class="pl-k">as</span> <span class="pl-c1">scraper</span>;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">include</span>(<span class="pl-s"><span class="pl-pds">'</span>scraper.php<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">\TDW\IO\ScrapeCore</span> <span class="pl-k">as</span> <span class="pl-c1">scraper</span>;</span>
 <span class="pl-s1"><span class="pl-smi">$s</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">scraper</span>();</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Load the $s-&gt;articles array with only the index page data</span></span>
-<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrape(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Load the $s-&gt;articles array with index and article body data</span></span>
-<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrape(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrape(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Output the $s-&gt;articles array in JSON format</span></span>
 <span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>printJSONScrapes();</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// You can chain the object</span></span>
-<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrapeTarget(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>printJSONScrapes();</span>
+<span class="pl-s1"><span class="pl-smi">$s</span><span class="pl-k">-&gt;</span>scrape(<span class="pl-s"><span class="pl-pds">'</span>index<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>scrape(<span class="pl-s"><span class="pl-pds">'</span>articles<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>printJSONScrapes();</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c">// Generate single Article array scrapeSingleArticleBody($article_url)</span></span>
 <span class="pl-s1"><span class="pl-c">// See the file: scraper-article-view.php for an example of how this is used</span></span>
@@ -140,7 +145,7 @@
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c">/*</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c">Example: index and article scrape JSON response (truncated for this readme)</span></span>
-<span class="pl-s1"><span class="pl-c">$s-&gt;scrapeTarget('index')-&gt;scrapeTarget('articles')-&gt;printJSONScrapes();</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;scrape('index')-&gt;scrape('articles')-&gt;printJSONScrapes();</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c">{  </span></span>
 <span class="pl-s1"><span class="pl-c">   "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  </span></span>
@@ -158,7 +163,7 @@
 <span class="pl-s1"><span class="pl-c">/*</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c">Example: index scrape JSON response (truncated for this readme)</span></span>
-<span class="pl-s1"><span class="pl-c">$s-&gt;scrapeTarget('index')-&gt;printJSONScrapes();</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;scrape('index')-&gt;printJSONScrapes();</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c">{  </span></span>
 <span class="pl-s1"><span class="pl-c">   "ec23b4de927ebe98f7d5e1fe9ac72c3f6cf7c9d3":{  </span></span>
@@ -178,10 +183,10 @@
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c">Example: Print PHP Array</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
-<span class="pl-s1"><span class="pl-c">// If you haven't already run scrapTarget('index')</span></span>
-<span class="pl-s1"><span class="pl-c">$s-&gt;print_rr($s-&gt;scrapeTarget('index')-&gt;scrapeTarget('articles')-&gt;articles);</span></span>
+<span class="pl-s1"><span class="pl-c">// If you haven't already run scrape('index')</span></span>
+<span class="pl-s1"><span class="pl-c">$s-&gt;print_rr($s-&gt;scrape('index')-&gt;scrape('articles')-&gt;articles);</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
-<span class="pl-s1"><span class="pl-c">// If you have already run scrapeTarget('index') then $s-&gt;articles is already populated</span></span>
+<span class="pl-s1"><span class="pl-c">// If you have already run scrape('index') then $s-&gt;articles is already populated</span></span>
 <span class="pl-s1"><span class="pl-c">$s-&gt;print_rr($s-&gt;articles);</span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
 <span class="pl-s1"><span class="pl-c"></span></span>
