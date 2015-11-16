@@ -5,7 +5,7 @@ $s = new scraper();
 
 
 if(isset($_GET['uid'])) {
-    $s->scrapeTarget('index')->scrapeSingleArticleBody($_GET['uid']);
+    $s->scrape('index')->scrapeSingleArticleBody($_GET['uid']);
 } else {
     header('location: /scraper/scraper-view.php');
 }
