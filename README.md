@@ -18,8 +18,8 @@
 - `libxml2 Version => 2.7.8`
 
 ##### Example Files:
-- `scraper-view.php`
-- `scraper-article-view.php`
+- `\scraper\scraper-view.php`
+- `\scraper\scraper-article-view.php`
 
 ##### Scrapes: 
 - Article Headline
