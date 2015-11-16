@@ -8,6 +8,11 @@
 - If you're familiar with DOM and XPath it's actually pretty easy. 
 - Uses native PHP methods and objects. Nothing but libxml.
 
+##### Live Demo:
+- HTML View: http://tdw.io/scraper/scraper-view.php
+- JSON view, index scrape: http://tdw.io/scraper/scraper-view.php?json=1 
+- JSON view, index & article scrape: http://tdw.io/scraper/scraper-view.php?json=2 
+
 ##### Requires 
 - `scraper.php`
 - `PHP >= 5.5.9`
@@ -16,11 +21,6 @@
 ##### Example Files:
 - `scraper-view.php`
 - `scraper-article-view.php`
- 
-##### Live Demo:
-- HTML View: http://tdw.io/scraper/scraper-view.php
-- JSON view, index scrape: http://tdw.io/scraper/scraper-view.php?json=1 
-- JSON view, index & article scrape: http://tdw.io/scraper/scraper-view.php?json=2 
 
 ##### Scrapes: 
 - Article Headline
