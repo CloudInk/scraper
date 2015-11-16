@@ -38,7 +38,7 @@ class ScrapeCore
         return $this;
     }
 
-    function scrapeTarget($target = 'index')
+    function scrape($target = 'index')
     {
         switch ($target) {
             case 'index':
