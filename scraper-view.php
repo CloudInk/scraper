@@ -1,6 +1,6 @@
 <?php
 include('scraper.php');
-use \TDW\IO\scraper as scraper;
+use \TDW\IO\ScrapeCore as scraper;
 $s = new scraper();
 
 if (isset($_GET['json']) && $_GET['json'] == 1) {
