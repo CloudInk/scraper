@@ -1,7 +1,7 @@
 # MSNBC Headline Scraper
 
 - http://cloudink.github.io/scraper/
-- http://tdw.io/sc/sc.php?id=02-43-37.png
+![alt tag]https://github.com/CloudInk/scraper/blob/master/img/02-43-37.png?raw=true
 
 #### Scrapes top 10 headlines (in order) from msnbc.com.
 - Uses the DOMDocument object. Also uses xpath to locate target node values. 
