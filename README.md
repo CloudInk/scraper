@@ -68,7 +68,7 @@ $s->article;
 $s->articles;
 
 // List of top 10 trending articles, always present as long as scrapeTarget('index') has run
-$s->trending
+$s->trending;
 
 //// End Objects ////
 
