@@ -55,7 +55,7 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
             echo "
 
                              <div class='small-6 columns' style=''>
-                                <ul class='pricing-table' style='height: auto;'>
+                                <ul class='pricing-table' style='height: 500px;'>
 
                                     <li class='price'><small>{$article['article-title']}</small></li>
                                     <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>

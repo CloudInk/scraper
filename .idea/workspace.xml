@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecf45645-2452-4f95-8fe8-144483ce0361" name="Default" comment="readme">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/foundation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/foundation.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/normalize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/02-43-37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/tdw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.abide.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.accordion.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.clearing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.equalizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.interchange.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.joyride.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.magellan.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.offcanvas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.reveal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.slider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/foundation.topbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/foundation/jquery.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vendor/fastclick.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vendor/jquery.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vendor/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vendor/modernizr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/vendor/placeholder.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scraper/scraper-view.php" afterPath="$PROJECT_DIR$/scraper/scraper-view.php" />
     </list>
     <ignored path="scraper.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +29,7 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.689655">
+            <state vertical-scroll-proportion="0.0">
               <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
               <folding />
             </state>
@@ -69,20 +42,20 @@
       <file leaf-file-name="scraper-view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scraper/scraper-view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.931947">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.7849057">
+              <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
               <folding>
-                <marker date="1447665276000" expanded="true" signature="2004:2748" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="2071:2084" placeholder="..." />
-                <marker date="1447665276000" expanded="true" signature="2085:2713" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="2300:2353" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="2443:2459" placeholder="..." />
-                <marker date="1447665276000" expanded="true" signature="3350:3923" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="3417:3430" placeholder="..." />
-                <marker date="1447665276000" expanded="true" signature="3431:3923" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="3658:3711" placeholder="..." />
-                <marker date="1447665276000" expanded="false" signature="3801:3817" placeholder="..." />
-                <marker date="1447665276000" expanded="true" signature="4083:4100" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="2004:2749" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="2071:2085" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="2086:2714" placeholder="..." />
+                <marker date="1447852757500" expanded="false" signature="2301:2354" placeholder="..." />
+                <marker date="1447852757500" expanded="false" signature="2444:2460" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="3351:3924" placeholder="..." />
+                <marker date="1447852757500" expanded="false" signature="3418:3431" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="3432:3924" placeholder="..." />
+                <marker date="1447852757500" expanded="false" signature="3659:3712" placeholder="..." />
+                <marker date="1447852757500" expanded="false" signature="3802:3818" placeholder="..." />
+                <marker date="1447852757500" expanded="true" signature="4084:4101" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -91,7 +64,7 @@
       <file leaf-file-name="scraper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scraper/scraper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.04">
+            <state vertical-scroll-proportion="0.0">
               <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <marker date="1447665973581" expanded="true" signature="6534:6622" placeholder="..." />
@@ -117,6 +90,7 @@
       <list>
         <option value="$PROJECT_DIR$/scraper/scraper.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/scraper/scraper-view.php" />
       </list>
     </option>
   </component>
@@ -159,6 +133,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,7 +169,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,25 +242,31 @@
       <option name="project" value="LOCAL" />
       <updated>1447769945645</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="readme">
+      <created>1447772659212</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1447772659212</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1684" height="1027" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25615764" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25923645" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -322,6 +302,47 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scraper/scraper-view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447852757500" expanded="true" signature="2004:2749" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="2071:2085" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="2086:2714" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="2301:2354" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="2444:2460" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="3351:3924" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3418:3431" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="3432:3924" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3659:3712" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3802:3818" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="4084:4101" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scraper/scraper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <marker date="1447665973581" expanded="true" signature="6534:6622" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scraper/scraper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -334,7 +355,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scraper/scraper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.04">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
             <marker date="1447665973581" expanded="true" signature="6534:6622" placeholder="..." />
@@ -344,7 +365,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.689655">
+        <state vertical-scroll-proportion="0.0">
           <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
           <folding />
         </state>
@@ -355,20 +376,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scraper/scraper-view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.931947">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.7849057">
+          <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
           <folding>
-            <marker date="1447665276000" expanded="true" signature="2004:2748" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="2071:2084" placeholder="..." />
-            <marker date="1447665276000" expanded="true" signature="2085:2713" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="2300:2353" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="2443:2459" placeholder="..." />
-            <marker date="1447665276000" expanded="true" signature="3350:3923" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="3417:3430" placeholder="..." />
-            <marker date="1447665276000" expanded="true" signature="3431:3923" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="3658:3711" placeholder="..." />
-            <marker date="1447665276000" expanded="false" signature="3801:3817" placeholder="..." />
-            <marker date="1447665276000" expanded="true" signature="4083:4100" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="2004:2749" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="2071:2085" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="2086:2714" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="2301:2354" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="2444:2460" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="3351:3924" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3418:3431" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="3432:3924" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3659:3712" placeholder="..." />
+            <marker date="1447852757500" expanded="false" signature="3802:3818" placeholder="..." />
+            <marker date="1447852757500" expanded="true" signature="4084:4101" placeholder="..." />
           </folding>
         </state>
       </provider>
