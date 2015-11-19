@@ -63,10 +63,10 @@ $s->print_rr($s->articles);
 // Single article array generated after scrapeSingleArticleBody() has been called (above)
 $s->article;
 
-// Array of all articles, may contain article body depending on scrapeTarget()
+// Array of all articles, may contain article body depending on scrape()
 $s->articles;
 
-// List of top 10 trending articles, always present as long as scrapeTarget('index') has run
+// List of top 10 trending articles, always present as long as scrape('index') has run
 $s->trending;
 
 //// End Objects ////
