@@ -46,8 +46,9 @@ if (is_array($s->articles)) {
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TDW.IO | HOSTED API</title>
-    <link rel="stylesheet" href="http://foundation.zurb.com/assets/css/templates/foundation.css"/>
-    <script src="http://foundation.zurb.com/assets/js/modernizr.js"></script>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
+          type='text/css'>
 </head>
 <body style="background-color: #fbfbfb;">
 

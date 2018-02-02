@@ -25,8 +25,9 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TDW.IO | HOSTED API</title>
-    <link rel="stylesheet" href="http://foundation.zurb.com/assets/css/templates/foundation.css"/>
-    <script src="http://foundation.zurb.com/assets/js/modernizr.js"></script>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
+          type='text/css'>
 </head>
 <body style="background-color: #fbfbfb;">
 
@@ -36,10 +37,10 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
             <li class="price">Scraper - MSNBC Version <hr>
                 <small><a href="scraper-view.php?json=1">View Index JSON Output</a> | <a href="scraper-view.php?json=2">View Index & Article JSON Output</a> | <a href="https://github.com/CloudInk/scraper">View Source</a> </small>
             </li>
-            <li class="bullet-item">
+            <li>
                 <span ><strong>Trending Headlines</strong></span>
                 <br><br>
-                <?
+                <?php
                 foreach($s->trending as $trend) {
                     echo " &middot; {$trend} ";
                 }
@@ -58,8 +59,8 @@ if (isset($_GET['json']) && $_GET['json'] == 1) {
                                 <ul class='pricing-table' style='height: 500px;'>
 
                                     <li class='price'><small>{$article['article-title']}</small></li>
-                                    <li class='bullet-item'><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
-                                    <li class='bullet-item'><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
+                                    <li class=''><img src='{$article['article-image-src']}' style='border: 2px #ccc solid; height: 200px; width:  400px;'></small></li>
+                                    <li class=''><small style='font-size:0.8em;'>{$article['article-image-text']}</small></li>
                                     <li class='cta-button'><a class='button' href='scraper-article-view.php?uid={$article['article-link']}'>Read Scraped Article</a></li>
                                 </ul>
                             </div>
